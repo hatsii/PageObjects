@@ -1,6 +1,8 @@
 from Pages.registration_page import RegistrationPage
 from Data.user import test_user
 
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 def test_form_filling(open_registration_page):
     registration_form = RegistrationPage()
 

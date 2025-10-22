@@ -9,7 +9,6 @@ class RegistrationPage:
 
     def open(self):
         browser.open('/automation-practice-form')
-        # Убираем мешающие элементы
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
         return self
