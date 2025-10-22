@@ -16,7 +16,7 @@ class RegistrationPage:
 
     @property
     def should_registered_user_with(self):
-        return browser.all('.table td')
+        return browser.all('.table td').even
 
     def get_modal_popup(self):
         return browser.element('.modal-title')
