@@ -26,7 +26,7 @@ test_user = User(
     birthdate=('2003', 'March', '23'),
     subject='English',
     hobby=['Sports', 'Reading', 'Music'],
-    file='upload.txt',
+    file='examplePhoto.png',
     state='Rajasthan',
     city='Jaipur'
 )
