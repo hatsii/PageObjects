@@ -18,7 +18,7 @@ def browser_config():
 @pytest.fixture
 def open_registration_page():
     browser.open('/automation-practice-form')
-    # Убираем мешающие элементы
+
     browser.driver.execute_script("$('#fixedban').remove()")
     browser.driver.execute_script("$('footer').remove()")
 
