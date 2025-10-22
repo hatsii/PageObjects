@@ -1,12 +1,10 @@
 from selene import be, have
 import sys
 import os
-
-# Добавляем путь к папке Pages в sys.path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 from Pages.registration_page import RegistrationPage
 
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 def test_form_filling(open_registration_page):
     registration_form = RegistrationPage()
@@ -17,12 +15,12 @@ def test_form_filling(open_registration_page):
      .fill_lastname('Tatarnikov')
      .fill_useremail('example@mmail.ru')
      .select_gender('Male')
-     .fill_user_phone_number('2232323232')  # 10 цифр
+     .fill_user_phone_number('1232323239')  # 10 цифр
      .fill_date_of_birth('2003', 'March', '23')
      .select_subject('Chemistry')
      .select_hobby('Reading')
      .upload_file('examplePhoto.png')  # Убедитесь что файл существует в папке resources
-     .fill_current_address('SPLSFD,Test str., 1')
+     .fill_current_address('test,Test str, 412')
      .select_state('Haryana')
      .select_city('Karnal')
      .click_submit_button())
@@ -32,14 +30,14 @@ def test_form_filling(open_registration_page):
 
     # Проверка данных в таблице
     registration_form.should_registered_user_with.should(have.exact_texts(
-        'Vadim Tatarnikov',  # Имя и фамилия
-        'example@mmail.ru',  # Email
-        'Male',  # Gender
-        '2232323232',  # Mobile (10 digits)
-        '23 March,2003',  # Date of Birth
-        'Chemistry',  # Subjects
-        'Reading',  # Hobbies
-        'examplePhoto.png',  # Picture
-        'SPLSFD,Test str., 1',  # Address
-        'Haryana Karnal'  # State and City
+        'Vadim Tatarnikov',
+        'example@mmail.ru',
+        'Male',
+        '1232323239',
+        '23 March,2003',
+        'Chemistry',
+        'Reading',
+        'examplePhoto.png',
+        'test,Test str, 412',
+        'Haryana Karnal'
     ))

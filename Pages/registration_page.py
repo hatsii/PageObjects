@@ -8,7 +8,6 @@ class RegistrationPage:
 
     def open(self):
         browser.open('/automation-practice-form')
-        # Убираем мешающие элементы
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
         return self
@@ -60,7 +59,6 @@ class RegistrationPage:
         return self
 
     def upload_file(self, filename):
-        # Используем локальный путь к resources
         file_path = self.resources_path / filename
         browser.element('#uploadPicture').set_value(str(file_path))
         return self
